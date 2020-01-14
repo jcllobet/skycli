@@ -25,12 +25,12 @@ class RapidApi(object):
 @click.group(name="skycli")
 @click.pass_context
 @click.option('--key',
-              default=lambda: os.environ.get('SKYSCANNER_API_KEY', ''),
+              default=lambda: os.environ.get('SKYSCANNER_API_KEY', 'b20e2c2a7fmshd5c93ebd786fffep15ed61jsnbe869e5f3ecb'),
               show_default='env[''SKYSCANNER_API_KEY'']',
               type=click.STRING, help="RapidApi key.")
-@click.option("--country", help="The market/country your user is in", show_default="UK", default="UK")
-@click.option("--currency", help="The currency you want the prices in", show_default="GBP", default="GBP")
-@click.option("--locale", help="The locale you want the results in (ISO locale)", show_default="en-GBP", default="en-GB")
+@click.option("--country", help="The market/country your user is in", show_default="ES", default="ES")
+@click.option("--currency", help="The currency you want the prices in", show_default="EUR", default="EUR")
+@click.option("--locale", help="The locale you want the results in (ISO locale)", show_default="en-EUR", default="en-EU")
 def skycli(ctx, key, country, currency, locale):
     ctx.ensure_object(defaultdict)
     ctx.obj['KEY'] = key
